@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( Ink_Assistant ) ) :
+if ( ! class_exists( 'Ink_Assistant' ) ) :
 	/**
 	 *
 	 * @since 1.0
