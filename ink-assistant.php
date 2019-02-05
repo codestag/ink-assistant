@@ -99,8 +99,34 @@ function ink_assistant() {
 	return Ink_Assistant::register();
 }
 
-if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-	add_action( 'plugins_loaded', 'ink_assistant', 90 );
-} else {
-	xblocks();
+/**
+ *
+ * @since 1.0
+ */
+function ink_assistant_activation_notice() {
+	echo '<div class="error"><p>';
+	echo esc_html__( 'Ink Assistant requires Ink WordPress Theme to be installed and activated.', 'ink-assistant' );
+	echo '</p></div>';
 }
+
+/**
+ *
+ *
+ * @since 1.0
+ */
+function ink_assistant_activation_check() {
+	$theme = wp_get_theme(); // gets the current theme
+	if ( 'Ink' == $theme->name || 'Ink' == $theme->parent_theme  ) {
+		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
+			add_action( 'after_setup_theme', 'ink_assistant' );
+		} else {
+			ink_assistant();
+		}
+	} else {
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+		add_action( 'admin_notices', 'ink_assistant_activation_notice' );
+	}
+}
+
+// Theme loads.
+ink_assistant_activation_check();
