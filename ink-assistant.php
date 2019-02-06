@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Ink Assistant
- * Plugin URI: https://github.com/lushkant/ink-assistant
+ * Plugin URI: https://github.com/Codestag/ink-assistant
  * Description: A plugin to assit INK theme in adding widgets.
  * Author: Codestag
  * Author URI: https://codestag.com
