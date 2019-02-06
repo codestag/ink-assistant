@@ -14,23 +14,23 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 	public function __construct() {
 		$this->widget_id          = 'stag_widget_static_content';
 		$this->widget_cssclass    = 'stag_widget_static_content full-wrap';
-		$this->widget_description = __( 'Displays content from a specific page.', 'stag' );
-		$this->widget_name        = __( 'Section: Static Content', 'stag' );
+		$this->widget_description = __( 'Displays content from a specific page.', 'ink-assistant' );
+		$this->widget_name        = __( 'Section: Static Content', 'ink-assistant' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => '',
-				'label' => __( 'Title:', 'stag' ),
+				'label' => __( 'Title:', 'ink-assistant' ),
 			),
 			'page' => array(
 				'type'  => 'page',
 				'std'   => '',
-				'label' => __( 'Select Page:', 'stag' ),
+				'label' => __( 'Select Page:', 'ink-assistant' ),
 			),
 			'bg_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => stag_theme_mod( 'colors', 'accent' ),
-				'label' => __( 'Background Color:', 'stag' ),
+				'label' => __( 'Background Color:', 'ink-assistant' ),
 			),
 			'bg_opacity' => array(
 				'type'  => 'number',
@@ -38,22 +38,22 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 				'step'  => '5',
 				'min'   => '0',
 				'max'   => '100',
-				'label' => __( 'Background Image Opacity:', 'stag' ),
+				'label' => __( 'Background Image Opacity:', 'ink-assistant' ),
 			),
 			'bg_image' => array(
 				'type'  => 'image',
 				'std'   => null,
-				'label' => __( 'Background Image:', 'stag' ),
+				'label' => __( 'Background Image:', 'ink-assistant' ),
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#ffffff',
-				'label' => __( 'Text Color:', 'stag' ),
+				'label' => __( 'Text Color:', 'ink-assistant' ),
 			),
 			'link_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#f8f8f8',
-				'label' => __( 'Link Color:', 'stag' ),
+				'label' => __( 'Link Color:', 'ink-assistant' ),
 			),
 		);
 
@@ -89,7 +89,7 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 		echo $before_widget;
 
 		// Allow site-wide customization of the 'Read more' link text.
-		$read_more = apply_filters( 'stag_read_more_text', __( 'Read more', 'stag' ) );
+		$read_more = apply_filters( 'stag_read_more_text', __( 'Read more', 'ink-assistant' ) );
 		?>
 		<style type="text/css">
 			#<?php echo $widget_id; ?> {

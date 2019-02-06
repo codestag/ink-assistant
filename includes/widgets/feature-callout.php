@@ -11,28 +11,28 @@ class Stag_Widget_Feature_Callout extends Stag_Widget {
 	public function __construct() {
 		$this->widget_id          = 'stag_widget_feature_callout';
 		$this->widget_cssclass    = 'stag_widget_feature_callout full-wrap';
-		$this->widget_description = esc_html__( 'Displays a feature callout.', 'stag' );
-		$this->widget_name        = esc_html__( 'Section: Feature Callout', 'stag' );
+		$this->widget_description = esc_html__( 'Displays a feature callout.', 'ink-assistant' );
+		$this->widget_name        = esc_html__( 'Section: Feature Callout', 'ink-assistant' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => '',
-				'label' => __( 'Title:', 'stag' ),
+				'label' => __( 'Title:', 'ink-assistant' ),
 			),
 			'content' => array(
 				'type'  => 'textarea',
 				'std'   => '',
-				'label' => __( 'Content:', 'stag' ),
+				'label' => __( 'Content:', 'ink-assistant' ),
 				'rows'  => 5,
 			),
 			'text_align' => array(
 				'type'  => 'select',
 				'std'   => 'left',
-				'label' => __( 'Text Align:', 'stag' ),
+				'label' => __( 'Text Align:', 'ink-assistant' ),
 				'options' => array(
-					'left' => __( 'Left', 'stag' ),
-					'right' => __( 'Right', 'stag' ),
-					'center' => __( 'Center (cover only)', 'stag' ),
+					'left' => __( 'Left', 'ink-assistant' ),
+					'right' => __( 'Right', 'ink-assistant' ),
+					'center' => __( 'Center (cover only)', 'ink-assistant' ),
 				),
 			),
 			'vertical_align' => array(
@@ -48,31 +48,31 @@ class Stag_Widget_Feature_Callout extends Stag_Widget {
 			'image' => array(
 				'type'  => 'image',
 				'std'   => null,
-				'label' => esc_html__( 'Image:', 'stag' ),
+				'label' => esc_html__( 'Image:', 'ink-assistant' ),
 			),
 			'background' => array(
 				'type'  => 'select',
 				'std'   => 'pull',
-				'label' => __( 'Image Style:', 'stag' ),
+				'label' => __( 'Image Style:', 'ink-assistant' ),
 				'options' => array(
-					'cover' => __( 'Cover', 'stag' ),
-					'pull'  => __( 'Pull Out', 'stag' ),
+					'cover' => __( 'Cover', 'ink-assistant' ),
+					'pull'  => __( 'Pull Out', 'ink-assistant' ),
 				),
 			),
 			'cover_overlay' => array(
 				'type' => 'checkbox',
 				'std'  => 1,
-				'label' => __( 'Use dark transparent overlay (cover only)', 'stag' ),
+				'label' => __( 'Use dark transparent overlay (cover only)', 'ink-assistant' ),
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#2b2828',
-				'label' => __( 'Text Color:', 'stag' ),
+				'label' => __( 'Text Color:', 'ink-assistant' ),
 			),
 			'background_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#ffffff',
-				'label' => __( 'Background Color:', 'stag' ),
+				'label' => __( 'Background Color:', 'ink-assistant' ),
 			),
 		);
 

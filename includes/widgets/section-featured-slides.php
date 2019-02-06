@@ -11,41 +11,41 @@ class Stag_Widget_Featured_Slides extends Stag_Widget {
 	public function __construct() {
 		$this->widget_id          = 'stag_widget_feature_slides';
 		$this->widget_cssclass    = 'stag_widget_feature_slides full-wrap';
-		$this->widget_description = esc_html__( 'Displays all contents under &ldquo;Featured Slides Sidebar&rdquo; Area.', 'stag' );
-		$this->widget_name        = esc_html__( 'Section: Featured Slides', 'stag' );
+		$this->widget_description = esc_html__( 'Displays all contents under &ldquo;Featured Slides Sidebar&rdquo; Area.', 'ink-assistant' );
+		$this->widget_name        = esc_html__( 'Section: Featured Slides', 'ink-assistant' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => '',
-				'label' => esc_html__( 'Title:', 'stag' ),
+				'label' => esc_html__( 'Title:', 'ink-assistant' ),
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#000',
-				'label' => esc_html__( 'Text Color:', 'stag' ),
+				'label' => esc_html__( 'Text Color:', 'ink-assistant' ),
 			),
 			'link_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#000',
-				'label' => esc_html__( 'Link Color:', 'stag' ),
+				'label' => esc_html__( 'Link Color:', 'ink-assistant' ),
 			),
 			'content_position' => array(
 				'type'  => 'select',
 				'std'   => 'slide-content-left',
-				'label' => esc_html__( 'Content Position:', 'stag' ),
+				'label' => esc_html__( 'Content Position:', 'ink-assistant' ),
 				'options' => array(
-					'slide-content-left'   => esc_html__( 'Left', 'stag' ),
-					'slide-content-center' => esc_html__( 'Center', 'stag' ),
-					'slide-content-right'  => esc_html__( 'Right', 'stag' ),
+					'slide-content-left'   => esc_html__( 'Left', 'ink-assistant' ),
+					'slide-content-center' => esc_html__( 'Center', 'ink-assistant' ),
+					'slide-content-right'  => esc_html__( 'Right', 'ink-assistant' ),
 				),
 			),
 			'flex_transition' => array(
 				'type'  => 'select',
 				'std'   => 'fade',
-				'label' => esc_html__( 'Transition Effect:', 'stag' ),
+				'label' => esc_html__( 'Transition Effect:', 'ink-assistant' ),
 				'options' => array(
-					'fade'  => esc_html__( 'Fade', 'stag' ),
-					'slide' => esc_html__( 'Slide', 'stag' ),
+					'fade'  => esc_html__( 'Fade', 'ink-assistant' ),
+					'slide' => esc_html__( 'Slide', 'ink-assistant' ),
 				),
 			),
 			'flex_speed' => array(
@@ -54,22 +54,22 @@ class Stag_Widget_Featured_Slides extends Stag_Widget {
 				'step'  => 1,
 				'min'   => 1,
 				'max'   => 100,
-				'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'stag' ),
+				'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'ink-assistant' ),
 			),
 			'flex_pause' => array(
 				'type'  => 'checkbox',
 				'std'   => 0,
-				'label' => esc_html__( 'Pause slideshow when hover?', 'stag' ),
+				'label' => esc_html__( 'Pause slideshow when hover?', 'ink-assistant' ),
 			),
 			'slide_pagination' => array(
 				'type'  => 'checkbox',
 				'std'   => 0,
-				'label' => esc_html__( 'Show slide pagination?', 'stag' ),
+				'label' => esc_html__( 'Show slide pagination?', 'ink-assistant' ),
 			),
 			'hide_on_mobile' => array(
 				'type'  => 'checkbox',
 				'std'   => 0,
-				'label' => esc_html__( 'Hide on mobile?', 'stag' ),
+				'label' => esc_html__( 'Hide on mobile?', 'ink-assistant' ),
 			),
 		);
 

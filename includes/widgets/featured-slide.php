@@ -11,24 +11,24 @@ class Stag_Widget_Featured_Slide_Item extends Stag_Widget {
 	public function __construct() {
 		$this->widget_id          = 'stag_widget_feature_slide';
 		$this->widget_cssclass    = 'stag_widget_feature_slide full-wrap';
-		$this->widget_description = esc_html__( 'Displays a feature slide.', 'stag' );
-		$this->widget_name        = esc_html__( 'Featured Slide Item', 'stag' );
+		$this->widget_description = esc_html__( 'Displays a feature slide.', 'ink-assistant' );
+		$this->widget_name        = esc_html__( 'Featured Slide Item', 'ink-assistant' );
 		$this->settings           = array(
 			'background_image' => array(
 					'type'  => 'image',
 					'std'   => null,
-					'label' => esc_html__( 'Background Image:', 'stag' ),
+					'label' => esc_html__( 'Background Image:', 'ink-assistant' ),
 				),
 				'content_text' => array(
 					'type'  => 'textarea',
 					'std'   => '',
-					'label' => esc_html__( 'Content:', 'stag' ),
+					'label' => esc_html__( 'Content:', 'ink-assistant' ),
 					'rows'  => 5,
 				),
 				'box_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#fff',
-					'label' => esc_html__( 'Content Box Color:', 'stag' ),
+					'label' => esc_html__( 'Content Box Color:', 'ink-assistant' ),
 				),
 				'box_opacity' => array(
 					'type'  => 'number',
@@ -36,17 +36,17 @@ class Stag_Widget_Featured_Slide_Item extends Stag_Widget {
 					'step'  => 5,
 					'min'   => 0,
 					'max'   => 100,
-					'label' => esc_html__( 'Content Box Opacity:', 'stag' ),
+					'label' => esc_html__( 'Content Box Opacity:', 'ink-assistant' ),
 				),
 				'button_link' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button URL:', 'stag' ),
+					'label' => esc_html__( 'Button URL:', 'ink-assistant' ),
 				),
 				'button_text' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button Text:', 'stag' ),
+					'label' => esc_html__( 'Button Text:', 'ink-assistant' ),
 				),
 		);
 

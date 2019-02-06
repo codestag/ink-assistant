@@ -11,39 +11,39 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 	public function __construct() {
 		$this->widget_id          = 'stag_widget_recent_posts';
 		$this->widget_cssclass    = 'stag_widget_recent_posts full-wrap';
-		$this->widget_description = __( 'Displays recent posts from Blog.', 'stag' );
-		$this->widget_name        = __( 'Section: Recent Posts', 'stag' );
+		$this->widget_description = __( 'Displays recent posts from Blog.', 'ink-assistant' );
+		$this->widget_name        = __( 'Section: Recent Posts', 'ink-assistant' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => 'Latest Posts',
-				'label' => __( 'Title:', 'stag' ),
+				'label' => __( 'Title:', 'ink-assistant' ),
 			),
 			'description' => array(
 				'type'  => 'textarea',
 				'std'   => null,
 				'rows'  => '5',
-				'label' => __( 'Description:', 'stag' ),
+				'label' => __( 'Description:', 'ink-assistant' ),
 			),
 			'count' => array(
 				'type'  => 'number',
 				'std'   => '3',
-				'label' => __( 'Number of posts to show:', 'stag' ),
+				'label' => __( 'Number of posts to show:', 'ink-assistant' ),
 			),
 			'post_date' => array(
 				'type'  => 'checkbox',
 				'std'   => 'on',
-				'label' => __( 'Show Post Meta?', 'stag' ),
+				'label' => __( 'Show Post Meta?', 'ink-assistant' ),
 			),
 			'category' => array(
 				'type'  => 'category',
 				'std'   => '0',
-				'label' => __( 'Post Category:', 'stag' ),
+				'label' => __( 'Post Category:', 'ink-assistant' ),
 			),
 			'bg_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => stag_theme_mod( 'colors', 'accent' ),
-				'label' => __( 'Background Color:', 'stag' ),
+				'label' => __( 'Background Color:', 'ink-assistant' ),
 			),
 			'bg_opacity' => array(
 				'type'  => 'number',
@@ -51,22 +51,22 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 				'step'  => '5',
 				'min'   => '0',
 				'max'   => '100',
-				'label' => __( 'Background Image Opacity:', 'stag' ),
+				'label' => __( 'Background Image Opacity:', 'ink-assistant' ),
 			),
 			'bg_image' => array(
 				'type'  => 'image',
 				'std'   => null,
-				'label' => __( 'Background Image:', 'stag' ),
+				'label' => __( 'Background Image:', 'ink-assistant' ),
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#ffffff',
-				'label' => __( 'Text Color:', 'stag' ),
+				'label' => __( 'Text Color:', 'ink-assistant' ),
 			),
 			'link_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#f8f8f8',
-				'label' => __( 'Link Color:', 'stag' ),
+				'label' => __( 'Link Color:', 'ink-assistant' ),
 			),
 		);
 
@@ -167,7 +167,7 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 					<?php if ( '' !== $post_date  ) : ?>
 						<footer class="entry-meta">
 							<?php stag_posted_on(); ?>
-							<?php edit_post_link( __( 'Edit', 'stag' ), '<span class="edit-link">', '</span>' ); ?>
+							<?php edit_post_link( __( 'Edit', 'ink-assistant' ), '<span class="edit-link">', '</span>' ); ?>
 						</footer><!-- .entry-meta -->
 					<?php endif; ?>
 				</article>
@@ -177,7 +177,7 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 			<?php remove_all_filters( 'subtitle_view_supported' ); ?>
 			<?php wp_reset_postdata(); ?>
 
-			<a href="<?php echo $posts_page; ?>" class="button all-posts"><?php _e( 'See All Posts', 'stag' ); ?></a>
+			<a href="<?php echo $posts_page; ?>" class="button all-posts"><?php _e( 'See All Posts', 'ink-assistant' ); ?></a>
 		</section>
 
 		<?php

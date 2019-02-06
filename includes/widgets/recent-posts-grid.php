@@ -11,29 +11,29 @@ class Stag_Widget_Recent_Posts_Grid extends Stag_Widget {
 	public function __construct() {
 		$this->widget_id          = 'stag_widget_recent_posts_grid';
 		$this->widget_cssclass    = 'stag_widget_recent_posts_grid full-wrap';
-		$this->widget_description = __( 'Displays recent posts from Blog in grid style.', 'stag' );
-		$this->widget_name        = __( 'Section: Recent Posts (Grid)', 'stag' );
+		$this->widget_description = __( 'Displays recent posts from Blog in grid style.', 'ink-assistant' );
+		$this->widget_name        = __( 'Section: Recent Posts (Grid)', 'ink-assistant' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => 'Latest Posts',
-				'label' => __( 'Title:', 'stag' ),
+				'label' => __( 'Title:', 'ink-assistant' ),
 			),
 			'description' => array(
 				'type'  => 'textarea',
 				'std'   => null,
 				'rows'  => '5',
-				'label' => __( 'Description:', 'stag' ),
+				'label' => __( 'Description:', 'ink-assistant' ),
 			),
 			'count' => array(
 				'type'  => 'number',
 				'std'   => '3',
-				'label' => __( 'Number of posts to show:', 'stag' ),
+				'label' => __( 'Number of posts to show:', 'ink-assistant' ),
 			),
 			'category' => array(
 				'type'  => 'category',
 				'std'   => '0',
-				'label' => __( 'Post Category:', 'stag' ),
+				'label' => __( 'Post Category:', 'ink-assistant' ),
 			),
 		);
 

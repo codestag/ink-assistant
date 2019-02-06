@@ -11,19 +11,19 @@ class Stag_Widget_Contributors extends Stag_Widget {
 	public function __construct() {
 		$this->widget_id          = 'stag_widget_site_contributors';
 		$this->widget_cssclass    = 'site-contributors full-wrap';
-		$this->widget_description = __( 'Print a list of all site contributors who published at least one post.', 'stag' );
-		$this->widget_name        = __( 'Section: Contributors', 'stag' );
+		$this->widget_description = __( 'Print a list of all site contributors who published at least one post.', 'ink-assistant' );
+		$this->widget_name        = __( 'Section: Contributors', 'ink-assistant' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => 'Our Contributors',
-				'label' => __( 'Title:', 'stag' ),
+				'label' => __( 'Title:', 'ink-assistant' ),
 			),
 			'description' => array(
 				'type'  => 'textarea',
 				'std'   => null,
 				'rows'  => '5',
-				'label' => __( 'Description:', 'stag' ),
+				'label' => __( 'Description:', 'ink-assistant' ),
 			),
 		);
 
