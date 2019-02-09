@@ -37,10 +37,10 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		 * @since 1.0
 		 */
 		public static function register() {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceOf Ink_Assistant ) ) {
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Ink_Assistant ) ) {
 				self::$instance = new Ink_Assistant();
-				self::$instance->init();
 				self::$instance->define_constants();
+				self::$instance->init();
 				self::$instance->includes();
 			}
 		}
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		 * @since 1.0
 		 */
 		public function init() {
-			add_action( 'enqueue_assets', 'plugin_assets' );
+			add_action( 'admin_enqueue_scripts', array( $this, 'plugin_admin_assets' ) );
 		}
 
 		/**
@@ -89,8 +89,29 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 			require_once IA_PLUGIN_PATH . 'includes/widgets/section-featured-slides.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/static-content.php';
 			require_once IA_PLUGIN_PATH . 'includes/updater/updater.php';
+
+			if ( is_admin() ) : // Admin includes.
+				require_once IA_PLUGIN_PATH . 'includes/stag-admin-metabox.php';
+			endif;
+
 		}
- 	}
+
+		/**
+		 * Enqueue required scripts and styles.
+		 *
+		 * @param string $hook Current page slug.
+		 *
+		 * @since 1.0
+		 * @return void
+		 */
+		public function plugin_admin_assets( $hook ) {
+			if ( 'post.php' === $hook || 'post-new.php' === $hook ) {
+				wp_enqueue_media();
+				wp_enqueue_script( 'wp-color-picker' );
+				wp_enqueue_style( 'stag-admin-metabox', IA_PLUGIN_URL . 'assets/css/stag-admin-metabox.css', array( 'wp-color-picker' ), IA_VERSION, 'screen' );
+			}
+		}
+	}
 endif;
 
 
@@ -119,7 +140,7 @@ function ink_assistant_activation_notice() {
  */
 function ink_assistant_activation_check() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Ink' == $theme->name || 'Ink' == $theme->parent_theme  ) {
+	if ( 'Ink' == $theme->name || 'Ink' == $theme->parent_theme ) {
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 			add_action( 'after_setup_theme', 'ink_assistant' );
 		} else {
