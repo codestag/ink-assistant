@@ -81,6 +81,7 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		 * @since 1.0
 		 */
 		public function includes() {
+			require_once IA_PLUGIN_PATH . 'includes/class-stag-widget.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/contributors.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/feature-callout.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/featured-slide.php';
