@@ -8,10 +8,10 @@
  * @subpackage Ink
  */
 
-$nameError         = __( 'Please enter your name.', 'ink' );
-$emailError        = __( 'Please enter your email address.', 'ink' );
-$emailInvalidError = __( 'You entered an invalid email address.', 'ink' );
-$commentError      = __( 'Please enter a message.', 'ink' );
+$nameError         = __( 'Please enter your name.', 'ink-assistant' );
+$emailError        = __( 'Please enter your email address.', 'ink-assistant' );
+$emailInvalidError = __( 'You entered an invalid email address.', 'ink-assistant' );
+$commentError      = __( 'Please enter a message.', 'ink-assistant' );
 
 $errorMessages = array();
 $templates = new Ink_Template_Loader;
@@ -87,17 +87,17 @@ if ( ! $background_filter ) {
 		<?php if ( isset( $emailSent ) && true == $emailSent ) : ?>
 
 		<div class="stag-alert stag-alert--green">
-			<p><?php _e( 'Thanks, your email was sent successfully.', 'ink' ); ?></p>
+			<p><?php _e( 'Thanks, your email was sent successfully.', 'ink-assistant' ); ?></p>
 		</div>
 
 		<?php else : ?>
 
 		<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
-			<h2 class="ink-contact-form__title"><?php _e( 'Send a Message', 'ink' ); ?></h2>
+			<h2 class="ink-contact-form__title"><?php _e( 'Send a Message', 'ink-assistant' ); ?></h2>
 
 			<div class="grid">
 				<p class="unit one-of-two">
-					<label for="contactName"><?php _e( 'Name', 'ink' ); ?></label>
+					<label for="contactName"><?php _e( 'Name', 'ink-assistant' ); ?></label>
 					<input type="text" name="contactName" id="contactName" value="
 					<?php
 					if ( isset( $_POST['contactName'] ) ) {
@@ -110,7 +110,7 @@ if ( ! $background_filter ) {
 				</p>
 
 				<p class="unit one-of-two">
-					<label for="email"><?php _e( 'Email', 'ink' ); ?></label>
+					<label for="email"><?php _e( 'Email', 'ink-assistant' ); ?></label>
 					<input type="email" name="email" id="email" value="
 					<?php
 					if ( isset( $_POST['email'] ) ) {
@@ -126,7 +126,7 @@ if ( ! $background_filter ) {
 				</p>
 
 				<p class="unit span-grid">
-					<label for="commentsText"><?php _e( 'Your Message', 'ink' ); ?></label>
+					<label for="commentsText"><?php _e( 'Your Message', 'ink-assistant' ); ?></label>
 					<textarea rows="6" name="comments" id="commentsText" required>
 					<?php
 					if ( isset( $_POST['comments'] ) ) {
@@ -141,7 +141,7 @@ if ( ! $background_filter ) {
 			</div>
 
 			<p class="buttons">
-				<input type="submit" id="submitted" class="contact-form-button" name="submitted" value="<?php esc_attr_e( 'Send Message', 'ink' ); ?>">
+				<input type="submit" id="submitted" class="contact-form-button" name="submitted" value="<?php esc_attr_e( 'Send Message', 'ink-assistant' ); ?>">
 			</p>
 
 		</form>

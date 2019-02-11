@@ -197,7 +197,7 @@ class Stag_Widget extends WP_Widget {
 					<p>
 						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>">
-							<option value="0"><?php _e( 'All', 'ink' ); ?></option>
+							<option value="0"><?php _e( 'All', 'ink-assistant' ); ?></option>
 							<?php foreach ( $categories as $cat ) : ?>
 								<option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php selected( $cat->term_id, $value ); ?>><?php echo esc_attr( $cat->name ); ?></option>
 							<?php endforeach; ?>
@@ -218,7 +218,7 @@ class Stag_Widget extends WP_Widget {
 					<p>
 						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[]" multiple>
-							<option value="0"><?php _e( 'All', 'ink' ); ?></option>
+							<option value="0"><?php _e( 'All', 'ink-assistant' ); ?></option>
 							<?php foreach ( $categories as $cat ) : ?>
 								<option value="<?php echo esc_attr( $cat->term_id ); ?>"
 														  <?php
@@ -296,13 +296,13 @@ class Stag_Widget extends WP_Widget {
 						</div>
 
 						<input type="hidden" class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"value="<?php echo esc_attr( $value ); ?>" placeholder="http://" />
-						<a href="#" class="button-secondary <?php echo esc_attr( $this->get_field_id( $key ) ); ?>-add" onclick="imageWidget.uploader( '<?php echo esc_js( $this->id ); ?>', '<?php echo esc_js( $id_prefix ); ?>', '<?php echo esc_js( $key ); ?>' ); return false;"><?php esc_html_e( 'Choose Image', 'ink' ); ?></a>
+						<a href="#" class="button-secondary <?php echo esc_attr( $this->get_field_id( $key ) ); ?>-add" onclick="imageWidget.uploader( '<?php echo esc_js( $this->id ); ?>', '<?php echo esc_js( $id_prefix ); ?>', '<?php echo esc_js( $key ); ?>' ); return false;"><?php esc_html_e( 'Choose Image', 'ink-assistant' ); ?></a>
 						<a href="#" style="display:inline-block;margin:5px 0 0 3px;
 						<?php
 						if ( empty( $value ) ) {
 							echo 'display:none;';}
 						?>
-						" id="<?php echo esc_attr( $id_prefix ); ?>remove" class="button-link-delete" onclick="imageWidget.remove( '<?php echo esc_js( $this->id ); ?>', '<?php echo esc_js( $id_prefix ); ?>', '<?php echo esc_js( $key ); ?>' ); return false;"><?php esc_html_e( 'Remove', 'ink' ); ?></a>
+						" id="<?php echo esc_attr( $id_prefix ); ?>remove" class="button-link-delete" onclick="imageWidget.remove( '<?php echo esc_js( $this->id ); ?>', '<?php echo esc_js( $id_prefix ); ?>', '<?php echo esc_js( $key ); ?>' ); return false;"><?php esc_html_e( 'Remove', 'ink-assistant' ); ?></a>
 					</p>
 					<?php
 					break;

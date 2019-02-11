@@ -96,7 +96,7 @@ function stag_create_meta_box( $post, $meta_box ) {
 						frame.toolbar.get('view').set({
 							insert: {
 								style: 'primary',
-								text: "<?php esc_html_e( 'Insert', 'ink' ); ?>",
+								text: "<?php esc_html_e( 'Insert', 'ink-assistant' ); ?>",
 
 								click: function() {
 									var models = frame.state().get('selection'),
@@ -136,14 +136,14 @@ function stag_create_meta_box( $post, $meta_box ) {
 					$('#stag_images_upload').on('click', function(e) {
 						e.preventDefault();
 						var options = {
-							title: "<?php _e( 'Create Featured Gallery', 'ink' ); ?>",
+							title: "<?php _e( 'Create Featured Gallery', 'ink-assistant' ); ?>",
 							state: 'gallery-edit',
 							frame: 'post',
 							selection: selection
 						};
 
 						if( frame || selection ) {
-							options['title'] = '<?php esc_attr_e( 'Edit Featured Gallery', 'ink' ); ?>';
+							options['title'] = '<?php esc_attr_e( 'Edit Featured Gallery', 'ink-assistant' ); ?>';
 						}
 
 						frame = wp.media(options).open();
@@ -151,7 +151,7 @@ function stag_create_meta_box( $post, $meta_box ) {
 						// Tweak Views
 						frame.menu.get('view').unset('cancel');
 						frame.menu.get('view').unset('separateCancel');
-						frame.menu.get('view').get('gallery-edit').el.innerHTML = '<?php esc_attr_e( 'Edit Featured Gallery', 'ink' ); ?>';
+						frame.menu.get('view').get('gallery-edit').el.innerHTML = '<?php esc_attr_e( 'Edit Featured Gallery', 'ink-assistant' ); ?>';
 						frame.content.get('view').sidebar.unset('gallery'); // Hide Gallery Settings in sidebar
 
 						// when editing a gallery
@@ -187,7 +187,7 @@ function stag_create_meta_box( $post, $meta_box ) {
 							frame.toolbar.get('view').set({
 								insert: {
 									style: 'primary',
-									text: '<?php _e( 'Save Featured Gallery', 'ink' ); ?>',
+									text: '<?php _e( 'Save Featured Gallery', 'ink-assistant' ); ?>',
 									click: function(){
 										var models = frame.state().get('library'),
 											ids = '';
@@ -196,7 +196,7 @@ function stag_create_meta_box( $post, $meta_box ) {
 											ids += attachment.id + ','
 										});
 
-										this.el.innerHTML = '<?php esc_attr_e( 'Saving...', 'ink' ); ?>';
+										this.el.innerHTML = '<?php esc_attr_e( 'Saving...', 'ink-assistant' ); ?>';
 
 										$.ajax({
 											type: 'POST',
@@ -258,9 +258,9 @@ function stag_create_meta_box( $post, $meta_box ) {
 
 				$meta          = stag_get_post_meta( 'settings', $post->ID, 'stag_image_ids' );
 				$thumbs_output = '';
-				$button_text   = ( $meta ) ? __( 'Edit Gallery', 'ink' ) : $field['std'];
+				$button_text   = ( $meta ) ? __( 'Edit Gallery', 'ink-assistant' ) : $field['std'];
 				if ( $meta ) {
-					$field['std']  = __( 'Edit Gallery', 'ink' );
+					$field['std']  = __( 'Edit Gallery', 'ink-assistant' );
 					$thumbs        = explode( ',', $meta );
 					$thumbs_output = '';
 					foreach ( $thumbs as $thumb ) {

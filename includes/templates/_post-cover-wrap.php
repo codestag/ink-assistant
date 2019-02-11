@@ -87,12 +87,12 @@ if ( $restricted_condition ) {
 
 			<footer class="entry-meta">
 				<?php stag_posted_on(); ?>
-				<?php edit_post_link( __( 'Edit', 'ink' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_post_link( __( 'Edit', 'ink-assistant' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer>
 
 			<?php if ( stag_theme_mod( 'post_settings', 'post_categories' ) && stag_categorized_blog() && $categories_list ) : ?>
 			<div class="entry-categories">
-				<?php esc_html_e( 'In ', 'ink' ); ?><?php echo $categories_list; ?>
+				<?php esc_html_e( 'In ', 'ink-assistant' ); ?><?php echo $categories_list; ?>
 			</div>
 			<?php endif; ?>
 		</div>

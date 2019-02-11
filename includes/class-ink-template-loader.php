@@ -14,7 +14,7 @@ class Ink_Template_Loader extends Gamajo_Template_Loader {
 	 * @since 1.0.0
 	 * @type string
 	 */
-	protected $filter_prefix = 'ink';
+	protected $filter_prefix = 'ink-assistant';
 
 	/**
 	 * Directory name where custom templates for this plugin should be found in the theme.
