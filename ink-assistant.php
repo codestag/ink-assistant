@@ -89,6 +89,8 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 			require_once IA_PLUGIN_PATH . 'includes/widgets/section-featured-slides.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/static-content.php';
 			require_once IA_PLUGIN_PATH . 'includes/class-page-templater.php';
+			require_once IA_PLUGIN_PATH . 'includes/class-gamajo-template-loader.php';
+			require_once IA_PLUGIN_PATH . 'includes/class-ink-template-loader.php';
 			require_once IA_PLUGIN_PATH . 'includes/updater/updater.php';
 
 			if ( is_admin() ) : // Admin includes.
