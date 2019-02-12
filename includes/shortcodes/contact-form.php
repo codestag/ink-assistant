@@ -7,7 +7,6 @@
  * @package Ink Assistant
  * @subpackage Ink
  */
-
 function ink_contact_form_sc() {
 
 	$name_error          = __( 'Please enter your name.', 'ink-assistant' );

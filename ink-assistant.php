@@ -13,7 +13,6 @@
  * @package INK
  */
 
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -21,18 +20,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'Ink_Assistant' ) ) :
 	/**
+	 * Ink_Assistant Base Plugin Class.
 	 *
 	 * @since 1.0
 	 */
 	class Ink_Assistant {
 
 		/**
+		 * Base instance property.
 		 *
 		 * @since 1.0
 		 */
 		private static $instance;
 
 		/**
+		 * Registers a plugin instance & loads required methods.
 		 *
 		 * @since 1.0
 		 */
@@ -46,6 +48,7 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		}
 
 		/**
+		 * Initialize plugin hooks.
 		 *
 		 * @since 1.0
 		 */
@@ -54,6 +57,7 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		}
 
 		/**
+		 * Registers constants.
 		 *
 		 * @since 1.0
 		 */
@@ -65,9 +69,10 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		}
 
 		/**
+		 * Checks & defines undefined constants.
 		 *
-		 * @param string $name
-		 * @param string $value
+		 * @param string $name Contstant name.
+		 * @param string $value Constant value.
 		 * @since 1.0
 		 */
 		private function define( $name, $value ) {
@@ -77,18 +82,26 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		}
 
 		/**
+		 * Loads required files.
 		 *
 		 * @since 1.0
 		 */
 		public function includes() {
+			// Base Stag Widget class.
 			require_once IA_PLUGIN_PATH . 'includes/class-stag-widget.php';
+
+			// Widgets.
 			require_once IA_PLUGIN_PATH . 'includes/widgets/contributors.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/feature-callout.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/featured-slide.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/recent-posts-grid.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/section-featured-slides.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/static-content.php';
+
+			// Shortcodes.
 			require_once IA_PLUGIN_PATH . 'includes/shortcodes/contact-form.php';
+
+			// Github updater instance.
 			require_once IA_PLUGIN_PATH . 'includes/updater/updater.php';
 
 			if ( is_admin() ) : // Admin includes.
@@ -117,6 +130,7 @@ endif;
 
 
 /**
+ * Registers plugin base class instance.
  *
  * @since 1.0
  */
@@ -125,6 +139,7 @@ function ink_assistant() {
 }
 
 /**
+ * Plugin activation check notice.
  *
  * @since 1.0
  */
@@ -135,12 +150,12 @@ function ink_assistant_activation_notice() {
 }
 
 /**
- *
+ * Plugin Activation Check.
  *
  * @since 1.0
  */
 function ink_assistant_activation_check() {
-	$theme = wp_get_theme(); // gets the current theme
+	$theme = wp_get_theme(); // gets the current theme.
 	if ( 'Ink' == $theme->name || 'Ink' == $theme->parent_theme ) {
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 			add_action( 'after_setup_theme', 'ink_assistant' );
