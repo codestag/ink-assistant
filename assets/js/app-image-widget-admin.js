@@ -1,6 +1,7 @@
 jQuery(document).ready(function($){
+	'use strict';
 
-	imageWidget = {
+	window.imageWidget = {
 
 		// Call this from the upload button to initiate the upload frame.
 		uploader : function( widget_id, widget_id_string, key ) {
