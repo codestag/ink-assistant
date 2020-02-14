@@ -101,6 +101,7 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 
 			// Shortcodes.
 			require_once IA_PLUGIN_PATH . 'includes/shortcodes/contact-form.php';
+			require_once IA_PLUGIN_PATH . 'includes/shortcodes/locked-options.php';
 
 			if ( is_admin() ) : // Admin includes.
 				require_once IA_PLUGIN_PATH . 'includes/stag-admin-metabox.php';
