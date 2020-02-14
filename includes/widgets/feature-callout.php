@@ -14,57 +14,57 @@ class Stag_Widget_Feature_Callout extends Stag_Widget {
 		$this->widget_description = esc_html__( 'Displays a feature callout.', 'ink-assistant' );
 		$this->widget_name        = esc_html__( 'Section: Feature Callout', 'ink-assistant' );
 		$this->settings           = array(
-			'title' => array(
+			'title'            => array(
 				'type'  => 'text',
 				'std'   => '',
 				'label' => __( 'Title:', 'ink-assistant' ),
 			),
-			'content' => array(
+			'content'          => array(
 				'type'  => 'textarea',
 				'std'   => '',
 				'label' => __( 'Content:', 'ink-assistant' ),
 				'rows'  => 5,
 			),
-			'text_align' => array(
-				'type'  => 'select',
-				'std'   => 'left',
-				'label' => __( 'Text Align:', 'ink-assistant' ),
+			'text_align'       => array(
+				'type'    => 'select',
+				'std'     => 'left',
+				'label'   => __( 'Text Align:', 'ink-assistant' ),
 				'options' => array(
-					'left' => __( 'Left', 'ink-assistant' ),
-					'right' => __( 'Right', 'ink-assistant' ),
+					'left'   => __( 'Left', 'ink-assistant' ),
+					'right'  => __( 'Right', 'ink-assistant' ),
 					'center' => __( 'Center (cover only)', 'ink-assistant' ),
 				),
 			),
-			'vertical_align' => array(
-				'type'  => 'select',
-				'std'   => 'middle',
-				'label' => __( 'Vertical Alignment:', 'atik' ),
+			'vertical_align'   => array(
+				'type'    => 'select',
+				'std'     => 'middle',
+				'label'   => __( 'Vertical Alignment:', 'atik' ),
 				'options' => array(
-					'top' => __( 'Top', 'atik' ),
+					'top'    => __( 'Top', 'atik' ),
 					'middle' => __( 'Middle', 'atik' ),
 					'bottom' => __( 'Bottom', 'atik' ),
 				),
 			),
-			'image' => array(
+			'image'            => array(
 				'type'  => 'image',
 				'std'   => null,
 				'label' => esc_html__( 'Image:', 'ink-assistant' ),
 			),
-			'background' => array(
-				'type'  => 'select',
-				'std'   => 'pull',
-				'label' => __( 'Image Style:', 'ink-assistant' ),
+			'background'       => array(
+				'type'    => 'select',
+				'std'     => 'pull',
+				'label'   => __( 'Image Style:', 'ink-assistant' ),
 				'options' => array(
 					'cover' => __( 'Cover', 'ink-assistant' ),
 					'pull'  => __( 'Pull Out', 'ink-assistant' ),
 				),
 			),
-			'cover_overlay' => array(
-				'type' => 'checkbox',
-				'std'  => 1,
+			'cover_overlay'    => array(
+				'type'  => 'checkbox',
+				'std'   => 1,
 				'label' => __( 'Use dark transparent overlay (cover only)', 'ink-assistant' ),
 			),
-			'text_color' => array(
+			'text_color'       => array(
 				'type'  => 'colorpicker',
 				'std'   => '#2b2828',
 				'label' => __( 'Text Color:', 'ink-assistant' ),
@@ -96,9 +96,10 @@ class Stag_Widget_Feature_Callout extends Stag_Widget {
 	 * @param array $instance
 	 * @return void
 	 */
-	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
+	public function widget( $args, $instance ) {
+		if ( $this->get_cached_widget( $args ) ) {
 			return;
+		}
 
 		extract( $args );
 
@@ -169,7 +170,7 @@ class Stag_Widget_Feature_Callout extends Stag_Widget {
 		$output .= wpautop( $content );
 		$output .= '</div>';
 
-		$output  = apply_filters( 'atik_feature_callout_description', $output );
+		$output = apply_filters( 'atik_feature_callout_description', $output );
 
 		return $output;
 	}

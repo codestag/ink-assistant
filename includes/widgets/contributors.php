@@ -14,7 +14,7 @@ class Stag_Widget_Contributors extends Stag_Widget {
 		$this->widget_description = __( 'Print a list of all site contributors who published at least one post.', 'ink-assistant' );
 		$this->widget_name        = __( 'Section: Contributors', 'ink-assistant' );
 		$this->settings           = array(
-			'title' => array(
+			'title'       => array(
 				'type'  => 'text',
 				'std'   => 'Our Contributors',
 				'label' => __( 'Title:', 'ink-assistant' ),
@@ -40,8 +40,9 @@ class Stag_Widget_Contributors extends Stag_Widget {
 	 * @return void
 	 */
 	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
+		if ( $this->get_cached_widget( $args ) ) {
 			return;
+		}
 
 		ob_start();
 
@@ -52,7 +53,9 @@ class Stag_Widget_Contributors extends Stag_Widget {
 
 		echo $before_widget;
 
-		if ( $title ) echo $before_title . $title . $after_title;
+		if ( $title ) {
+			echo $before_title . $title . $after_title;
+		}
 
 		?>
 

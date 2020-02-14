@@ -14,7 +14,7 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 		$this->widget_description = __( 'Displays recent posts from Blog.', 'ink-assistant' );
 		$this->widget_name        = __( 'Section: Recent Posts', 'ink-assistant' );
 		$this->settings           = array(
-			'title' => array(
+			'title'       => array(
 				'type'  => 'text',
 				'std'   => 'Latest Posts',
 				'label' => __( 'Title:', 'ink-assistant' ),
@@ -25,27 +25,27 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 				'rows'  => '5',
 				'label' => __( 'Description:', 'ink-assistant' ),
 			),
-			'count' => array(
+			'count'       => array(
 				'type'  => 'number',
 				'std'   => '3',
 				'label' => __( 'Number of posts to show:', 'ink-assistant' ),
 			),
-			'post_date' => array(
+			'post_date'   => array(
 				'type'  => 'checkbox',
 				'std'   => 'on',
 				'label' => __( 'Show Post Meta?', 'ink-assistant' ),
 			),
-			'category' => array(
+			'category'    => array(
 				'type'  => 'category',
 				'std'   => '0',
 				'label' => __( 'Post Category:', 'ink-assistant' ),
 			),
-			'bg_color' => array(
+			'bg_color'    => array(
 				'type'  => 'colorpicker',
 				'std'   => stag_theme_mod( 'colors', 'accent' ),
 				'label' => __( 'Background Color:', 'ink-assistant' ),
 			),
-			'bg_opacity' => array(
+			'bg_opacity'  => array(
 				'type'  => 'number',
 				'std'   => '20',
 				'step'  => '5',
@@ -53,17 +53,17 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 				'max'   => '100',
 				'label' => __( 'Background Image Opacity:', 'ink-assistant' ),
 			),
-			'bg_image' => array(
+			'bg_image'    => array(
 				'type'  => 'image',
 				'std'   => null,
 				'label' => __( 'Background Image:', 'ink-assistant' ),
 			),
-			'text_color' => array(
+			'text_color'  => array(
 				'type'  => 'colorpicker',
 				'std'   => '#ffffff',
 				'label' => __( 'Text Color:', 'ink-assistant' ),
 			),
-			'link_color' => array(
+			'link_color'  => array(
 				'type'  => 'colorpicker',
 				'std'   => '#f8f8f8',
 				'label' => __( 'Link Color:', 'ink-assistant' ),
@@ -82,9 +82,10 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 	 * @param array $instance
 	 * @return void
 	 */
-	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
+	public function widget( $args, $instance ) {
+		if ( $this->get_cached_widget( $args ) ) {
 			return;
+		}
 
 		ob_start();
 
@@ -100,7 +101,15 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 		$bg_image    = $instance['bg_image'];
 		$text_color  = $instance['text_color'];
 		$link_color  = $instance['link_color'];
-		$posts       = wp_get_recent_posts( array( 'post_type' => 'post', 'numberposts' => $count, 'post_status' => 'publish', 'category' => $category ), OBJECT );
+		$posts       = wp_get_recent_posts(
+			array(
+				'post_type'   => 'post',
+				'numberposts' => $count,
+				'post_status' => 'publish',
+				'category'    => $category,
+			),
+			OBJECT
+		);
 
 		$posts_page = get_option( 'page_for_posts' );
 
@@ -128,7 +137,7 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 			}
 			#<?php echo $widget_id; ?> .static-content-cover {
 				background-image: url(<?php echo esc_url( $bg_image ); ?>);
-				opacity: <?php echo $bg_opacity/100; ?>;
+				opacity: <?php echo $bg_opacity / 100; ?>;
 			}
 			#<?php echo $widget_id; ?> a:not(.button) {
 				color: <?php echo $link_color; ?>;
@@ -148,23 +157,31 @@ class Stag_Widget_Recent_Posts extends Stag_Widget {
 		<div class="static-content-cover"></div>
 
 		<section class="inner-section">
-			<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+			<?php
+			if ( $title ) {
+				echo $before_title . $title . $after_title;}
+			?>
 
 			<div class="entry-content">
 				<?php echo apply_filters( 'the_content', $description ); ?>
 			</div>
 
-			<?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+			<?php
+			foreach ( $posts as $post ) :
+				setup_postdata( $post );
+				?>
 
-				<?php // Add subtitles support.
-				add_filter( 'subtitle_view_supported', '__return_true' ); ?>
+				<?php
+				// Add subtitles support.
+				add_filter( 'subtitle_view_supported', '__return_true' );
+				?>
 
 				<article id="post-<?php the_ID(); ?>">
 					<header class="entry-header">
 						<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 					</header><!-- .entry-header -->
 
-					<?php if ( '' !== $post_date  ) : ?>
+					<?php if ( '' !== $post_date ) : ?>
 						<footer class="entry-meta">
 							<?php stag_posted_on(); ?>
 							<?php edit_post_link( __( 'Edit', 'ink-assistant' ), '<span class="edit-link">', '</span>' ); ?>

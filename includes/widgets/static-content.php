@@ -17,17 +17,17 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 		$this->widget_description = __( 'Displays content from a specific page.', 'ink-assistant' );
 		$this->widget_name        = __( 'Section: Static Content', 'ink-assistant' );
 		$this->settings           = array(
-			'title' => array(
+			'title'      => array(
 				'type'  => 'text',
 				'std'   => '',
 				'label' => __( 'Title:', 'ink-assistant' ),
 			),
-			'page' => array(
+			'page'       => array(
 				'type'  => 'page',
 				'std'   => '',
 				'label' => __( 'Select Page:', 'ink-assistant' ),
 			),
-			'bg_color' => array(
+			'bg_color'   => array(
 				'type'  => 'colorpicker',
 				'std'   => stag_theme_mod( 'colors', 'accent' ),
 				'label' => __( 'Background Color:', 'ink-assistant' ),
@@ -40,7 +40,7 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 				'max'   => '100',
 				'label' => __( 'Background Image Opacity:', 'ink-assistant' ),
 			),
-			'bg_image' => array(
+			'bg_image'   => array(
 				'type'  => 'image',
 				'std'   => null,
 				'label' => __( 'Background Image:', 'ink-assistant' ),
@@ -70,8 +70,9 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 	 * @return void
 	 */
 	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
+		if ( $this->get_cached_widget( $args ) ) {
 			return;
+		}
 
 		ob_start();
 
@@ -98,7 +99,7 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 			}
 			#<?php echo $widget_id; ?> .static-content-cover {
 				background-image: url(<?php echo esc_url( $bg_image ); ?>);
-				opacity: <?php echo $bg_opacity/100; ?>;
+				opacity: <?php echo $bg_opacity / 100; ?>;
 			}
 			#<?php echo $widget_id; ?> a:not(.button) {
 				color: <?php echo $link_color; ?>;
@@ -119,9 +120,15 @@ class Stag_Widget_Static_Content extends Stag_Widget {
 		<section class="inner-section">
 
 			<?php if ( $post->have_posts() ) : ?>
-				<?php while ( $post->have_posts() ) : $post->the_post(); ?>
+				<?php
+				while ( $post->have_posts() ) :
+					$post->the_post();
+					?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+						<?php
+						if ( $title ) {
+							echo $before_title . $title . $after_title;}
+						?>
 
 						<div class="entry-content">
 							<?php the_content( $read_more ); ?>

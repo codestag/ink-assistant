@@ -15,39 +15,39 @@ class Stag_Widget_Featured_Slide_Item extends Stag_Widget {
 		$this->widget_name        = esc_html__( 'Featured Slide Item', 'ink-assistant' );
 		$this->settings           = array(
 			'background_image' => array(
-					'type'  => 'image',
-					'std'   => null,
-					'label' => esc_html__( 'Background Image:', 'ink-assistant' ),
-				),
-				'content_text' => array(
-					'type'  => 'textarea',
-					'std'   => '',
-					'label' => esc_html__( 'Content:', 'ink-assistant' ),
-					'rows'  => 5,
-				),
-				'box_color' => array(
-					'type'  => 'colorpicker',
-					'std'   => '#fff',
-					'label' => esc_html__( 'Content Box Color:', 'ink-assistant' ),
-				),
-				'box_opacity' => array(
-					'type'  => 'number',
-					'std'   => 100,
-					'step'  => 5,
-					'min'   => 0,
-					'max'   => 100,
-					'label' => esc_html__( 'Content Box Opacity:', 'ink-assistant' ),
-				),
-				'button_link' => array(
-					'type'  => 'text',
-					'std'   => '',
-					'label' => esc_html__( 'Button URL:', 'ink-assistant' ),
-				),
-				'button_text' => array(
-					'type'  => 'text',
-					'std'   => '',
-					'label' => esc_html__( 'Button Text:', 'ink-assistant' ),
-				),
+				'type'  => 'image',
+				'std'   => null,
+				'label' => esc_html__( 'Background Image:', 'ink-assistant' ),
+			),
+			'content_text'     => array(
+				'type'  => 'textarea',
+				'std'   => '',
+				'label' => esc_html__( 'Content:', 'ink-assistant' ),
+				'rows'  => 5,
+			),
+			'box_color'        => array(
+				'type'  => 'colorpicker',
+				'std'   => '#fff',
+				'label' => esc_html__( 'Content Box Color:', 'ink-assistant' ),
+			),
+			'box_opacity'      => array(
+				'type'  => 'number',
+				'std'   => 100,
+				'step'  => 5,
+				'min'   => 0,
+				'max'   => 100,
+				'label' => esc_html__( 'Content Box Opacity:', 'ink-assistant' ),
+			),
+			'button_link'      => array(
+				'type'  => 'text',
+				'std'   => '',
+				'label' => esc_html__( 'Button URL:', 'ink-assistant' ),
+			),
+			'button_text'      => array(
+				'type'  => 'text',
+				'std'   => '',
+				'label' => esc_html__( 'Button Text:', 'ink-assistant' ),
+			),
 		);
 
 		parent::__construct();
@@ -70,9 +70,10 @@ class Stag_Widget_Featured_Slide_Item extends Stag_Widget {
 	 * @param array $instance
 	 * @return void
 	 */
-	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
+	public function widget( $args, $instance ) {
+		if ( $this->get_cached_widget( $args ) ) {
 			return;
+		}
 
 		ob_start();
 
@@ -85,7 +86,7 @@ class Stag_Widget_Featured_Slide_Item extends Stag_Widget {
 		$box_opacity      = absint( $instance['box_opacity'] );
 		$content_text     = $this->box_content( $instance );
 
-		echo  $before_widget;
+		echo $before_widget;
 
 		?>
 
@@ -123,7 +124,7 @@ class Stag_Widget_Featured_Slide_Item extends Stag_Widget {
 
 		<?php
 
-		echo  $after_widget;
+		echo $after_widget;
 
 		wp_reset_postdata();
 
@@ -137,8 +138,8 @@ class Stag_Widget_Featured_Slide_Item extends Stag_Widget {
 	private function box_content( $instance ) {
 		$content = isset( $instance['content_text'] ) ? $instance['content_text'] : '';
 
-		$output  = wpautop( $content );
-		$output  = apply_filters( 'stag_slide_item_description', $output );
+		$output = wpautop( $content );
+		$output = apply_filters( 'stag_slide_item_description', $output );
 
 		return $output;
 	}

@@ -14,7 +14,7 @@ class Stag_Widget_Recent_Posts_Grid extends Stag_Widget {
 		$this->widget_description = __( 'Displays recent posts from Blog in grid style.', 'ink-assistant' );
 		$this->widget_name        = __( 'Section: Recent Posts (Grid)', 'ink-assistant' );
 		$this->settings           = array(
-			'title' => array(
+			'title'       => array(
 				'type'  => 'text',
 				'std'   => 'Latest Posts',
 				'label' => __( 'Title:', 'ink-assistant' ),
@@ -25,12 +25,12 @@ class Stag_Widget_Recent_Posts_Grid extends Stag_Widget {
 				'rows'  => '5',
 				'label' => __( 'Description:', 'ink-assistant' ),
 			),
-			'count' => array(
+			'count'       => array(
 				'type'  => 'number',
 				'std'   => '3',
 				'label' => __( 'Number of posts to show:', 'ink-assistant' ),
 			),
-			'category' => array(
+			'category'    => array(
 				'type'  => 'category',
 				'std'   => '0',
 				'label' => __( 'Post Category:', 'ink-assistant' ),
@@ -49,9 +49,10 @@ class Stag_Widget_Recent_Posts_Grid extends Stag_Widget {
 	 * @param array $instance
 	 * @return void
 	 */
-	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
+	public function widget( $args, $instance ) {
+		if ( $this->get_cached_widget( $args ) ) {
 			return;
+		}
 
 		ob_start();
 
@@ -61,7 +62,15 @@ class Stag_Widget_Recent_Posts_Grid extends Stag_Widget {
 		$description = $instance['description'];
 		$count       = $instance['count'];
 		$category    = $instance['category'];
-		$posts       = wp_get_recent_posts( array( 'post_type' => 'post', 'numberposts' => $count, 'post_status' => 'publish', 'category' => $category ), OBJECT );
+		$posts       = wp_get_recent_posts(
+			array(
+				'post_type'   => 'post',
+				'numberposts' => $count,
+				'post_status' => 'publish',
+				'category'    => $category,
+			),
+			OBJECT
+		);
 
 		global $post;
 
@@ -69,13 +78,16 @@ class Stag_Widget_Recent_Posts_Grid extends Stag_Widget {
 
 		echo '<section class="recent-posts-grid" data-layout="2-2-2-2">';
 
-		if ( $title ) echo $before_title . $title . $after_title;
+		if ( $title ) {
+			echo $before_title . $title . $after_title;
+		}
 
 		echo '<div class="entry-content">';
 			echo wp_kses( $description, ink_allowed_html() );
 		echo '</div>';
 
-		foreach ( $posts as $post ) : setup_postdata( $post );
+		foreach ( $posts as $post ) :
+			setup_postdata( $post );
 			add_filter( 'stag_showing_related_posts', '__return_true' );
 			add_filter( 'subtitle_view_supported', '__return_true' );
 			get_template_part( 'content', get_post_format() );

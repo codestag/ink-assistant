@@ -95,6 +95,7 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 			require_once IA_PLUGIN_PATH . 'includes/widgets/feature-callout.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/featured-slide.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/recent-posts-grid.php';
+			require_once IA_PLUGIN_PATH . 'includes/widgets/recent-posts.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/section-featured-slides.php';
 			require_once IA_PLUGIN_PATH . 'includes/widgets/static-content.php';
 
