@@ -47,11 +47,11 @@ function stag_rcp_locked_options( $atts ) {
 
 	<div class="locked-options<?php echo ( $has_access ) ? ' no-access' : ' has-access'; ?> <?php echo esc_attr( $button_color ); ?>-buttons">
 		<?php if ( $has_access ) : ?>
-			<a href="<?php echo esc_url( get_permalink( $registration_page ) ); ?>" class="stag-button stag-button--normal stag-button--<?php echo esc_attr( $button_color ); ?>"><?php esc_html_e( 'Subscribe', 'ink' ); ?></a>
+			<a href="<?php echo esc_url( get_permalink( $registration_page ) ); ?>" class="stag-button stag-button--normal stag-button--<?php echo esc_attr( $button_color ); ?>"><?php esc_html_e( 'Subscribe', 'ink-assistant' ); ?></a>
 			<?php $is_displayed = true; ?>
 		<?php endif; ?>
 		<?php if ( $show_login_button ) : ?>
-			<a href="<?php echo esc_url( wp_login_url() ); ?>" class="stag-button stag-button--normal stag-button--<?php echo esc_attr( $button_color ); ?>"><?php esc_html_e( 'Login', 'ink' ); ?></a>
+			<a href="<?php echo esc_url( wp_login_url() ); ?>" class="stag-button stag-button--normal stag-button--<?php echo esc_attr( $button_color ); ?>"><?php esc_html_e( 'Login', 'ink-assistant' ); ?></a>
 		<?php endif; ?>
 	</div>
 
