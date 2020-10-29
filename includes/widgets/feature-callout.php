@@ -38,11 +38,11 @@ class Stag_Widget_Feature_Callout extends Stag_Widget {
 			'vertical_align'   => array(
 				'type'    => 'select',
 				'std'     => 'middle',
-				'label'   => __( 'Vertical Alignment:', 'atik' ),
+				'label'   => __( 'Vertical Alignment:', 'ink-assistant' ),
 				'options' => array(
-					'top'    => __( 'Top', 'atik' ),
-					'middle' => __( 'Middle', 'atik' ),
-					'bottom' => __( 'Bottom', 'atik' ),
+					'top'    => __( 'Top', 'ink-assistant' ),
+					'middle' => __( 'Middle', 'ink-assistant' ),
+					'bottom' => __( 'Bottom', 'ink-assistant' ),
 				),
 			),
 			'image'            => array(
