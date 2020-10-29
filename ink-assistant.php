@@ -53,6 +53,7 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 		 * @since 1.0
 		 */
 		public function init() {
+			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'plugin_admin_assets' ) );
 		}
 
@@ -107,6 +108,16 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 				require_once IA_PLUGIN_PATH . 'includes/stag-admin-metabox.php';
 			endif;
 
+		}
+
+		/**
+		 * Load plugin language files.
+		 *
+		 * @access public
+		 * @return void
+		 */
+		public function load_textdomain() {
+			load_plugin_textdomain( 'ink-assistant', false, dirname( plugin_basename( IA_PLUGIN_PATH ) ) . '/languages/' );
 		}
 
 		/**
