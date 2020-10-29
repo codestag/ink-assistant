@@ -103,7 +103,7 @@ class Stag_Widget extends WP_Widget {
 					$instance[ $key ] = array_filter( $new_instance[ $key ] );
 					break;
 				default:
-					$instance[ $key ] = sanitize_text_field( $new_instance[ $key ] );
+					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : '';
 					break;
 			}
 		}
@@ -150,7 +150,7 @@ class Stag_Widget extends WP_Widget {
 					?>
 					<p>
 						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-							<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="text" value="1" <?php checked( 1, esc_attr( $value ) ); ?>/>
+							<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" value="1" <?php checked( 1, esc_attr( $value ) ); ?>/>
 							<?php echo esc_html( $setting['label'] ); ?>
 						</label>
 					</p>
