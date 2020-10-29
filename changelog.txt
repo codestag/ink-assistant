@@ -1,5 +1,10 @@
 ### Ink Assistant Changelog
 
+# 1.0.2 - October 29, 2020
+* Fix undefined key error while saving widgets
+* Add translation support & language files
+* Fix other minor issues
+
 # 1.0.1 - May 29, 2020
 * Improve plugin activation method
 * Fix other minor issues
