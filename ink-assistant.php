@@ -105,7 +105,10 @@ if ( ! class_exists( 'Ink_Assistant' ) ) :
 			require_once IA_PLUGIN_PATH . 'includes/shortcodes/locked-options.php';
 
 			if ( is_admin() ) : // Admin includes.
-				require_once IA_PLUGIN_PATH . 'includes/stag-admin-metabox.php';
+				require_once IA_PLUGIN_PATH . 'includes/meta/stag-admin-metabox.php';
+
+				// Post Metaboxes.
+				require_once IA_PLUGIN_PATH . 'includes/meta/post.php';
 			endif;
 
 		}
