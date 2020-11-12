@@ -1,8 +1,9 @@
 ### Ink Assistant Changelog
 
-# 1.0.2 - October 29, 2020
+# 1.0.2 - November 12, 2020
 * Fix undefined key error while saving widgets
 * Add translation support & language files
+* Migrated metaboxes from theme
 * Fix other minor issues
 
 # 1.0.1 - May 29, 2020
